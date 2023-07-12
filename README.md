@@ -1,1 +1,1 @@
-# movies_app_clean_arciticure
+# movies_app_clean_arcitecture
