@@ -2,12 +2,11 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movies_app/core/network/api_constance.dart';
 import 'package:movies_app/movies/domain/entities/genres.dart';
 import 'package:movies_app/movies/domain/entities/recommendation.dart';
-import 'package:movies_app/movies/presentation/screens/dummy.dart';
 import 'package:shimmer/shimmer.dart';
-
+import '../../../core/network/api_constants.dart';
+import '../../../core/utils/dummy.dart';
 import '../../domain/entities/movie_detail.dart';
 
 class MovieDetailScreen extends StatelessWidget {
@@ -66,7 +65,7 @@ class MovieDetailContent extends StatelessWidget {
                 blendMode: BlendMode.dstIn,
                 child: CachedNetworkImage(
                   width: MediaQuery.of(context).size.width,
-                  imageUrl: ApiConstance.imageUrl(movie.backdropPath),
+                  imageUrl: ApiConstants.imageUrl(movie.backdropPath),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -233,7 +232,7 @@ class MovieDetailContent extends StatelessWidget {
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(4.0)),
               child: CachedNetworkImage(
-                imageUrl: ApiConstance.imageUrl(recommendation.backdropPath),
+                imageUrl: ApiConstants.imageUrl(recommendation.backdropPath),
                 placeholder: (context, url) => Shimmer.fromColors(
                   baseColor: Colors.grey[850]!,
                   highlightColor: Colors.grey[800]!,
