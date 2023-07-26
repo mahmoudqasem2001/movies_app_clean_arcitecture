@@ -12,7 +12,7 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
       : super(const MovieDetailsState()) {
     on<GetMovieDetailsEvent>(_getMovieDetails);
 
-    on<GetMovieRecomendationEvent>(_getMovieRecomendation);
+    on<GetMovieRecommendationEvent>(_getMovieRecommendation);
   }
 
   FutureOr<void> _getMovieDetails(
@@ -32,8 +32,8 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
     );
   }
 
-  FutureOr<void> _getMovieRecomendation(
-      GetMovieRecomendationEvent event, Emitter<MovieDetailsState> emit) async {
+  FutureOr<void> _getMovieRecommendation(
+      GetMovieRecommendationEvent event, Emitter<MovieDetailsState> emit) async {
     final result =
         await getMovieDetailsUseCase(MovieDetailsParameters(movieId: event.id));
     result.fold(
